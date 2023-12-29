@@ -29,7 +29,7 @@ export class ListadoInversionesComponent implements OnInit {
   getInversiones(): void {
     this.sInversionService.getInversiones().subscribe(data => {
       this.listaInversiones = data;
-
+      this.liveApi = "Done!";
       
     });
   }
@@ -62,7 +62,9 @@ export class ListadoInversionesComponent implements OnInit {
       this.sInversionService.deleteInversion(id).subscribe(
         data => {
           this.getInversiones();
+          window.location.reload();
         }
+        
       )
     }
   }

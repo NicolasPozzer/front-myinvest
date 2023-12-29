@@ -10,13 +10,17 @@ import { AppComponent } from './app.component';
 import { GuiComponent } from './components/gui/gui.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListadoInversionesComponent } from './components/listado-inversiones/listado-inversiones.component';
+import { NewInversionComponent } from './components/new-inversion/new-inversion.component';
+import { MNewInversionComponent } from './modal/m-new-inversion/m-new-inversion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuiComponent,
     HomeComponent,
-    ListadoInversionesComponent
+    ListadoInversionesComponent,
+    NewInversionComponent,
+    MNewInversionComponent
   ],
   imports: [
     BrowserModule,

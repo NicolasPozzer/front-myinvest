@@ -1,0 +1,34 @@
+<!-- Modal1er Proyecto -->
+<div class="modal fade" id="newinversion-modalLabel" tabindex="-1" aria-labelledby="newinversion-modalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newinversion-modalLabel">1er Expefsfsfriencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+          <div class="form-group mt-2 mb-2">
+            <label for="nombre">Nombre/Ticket de la Inversion:</label>
+            <input type="text" class="form-control" id="nombre" name="nombreE" [(ngModel)]="nombre" required>
+          </div>
+          <div class="form-group mt-2 mb-2">
+            <label for="precioEntrada">Precio de entrada de la Compra (Ej. 145.92)</label>
+            <input type="text" class="form-control" id="precioEntrada" name="precioEntrada" [(ngModel)]="precioEntrada"
+              required>
+          </div>
+          <div class="form-group mt-4 mb-4">
+            <label for="cantInvertida">Cantidad a Invertir:</label>
+            <input type="text" class="form-control" id="cantInvertida" name="cantInvertida" [(ngModel)]="cantInvertida"
+              required>
+          </div>
+          <button class="btn btn-primary" data-bs-dismiss="modal">
+            Agregar Proyecto
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
