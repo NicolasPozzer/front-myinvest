@@ -6,12 +6,15 @@
     <p>La API no está disponible</p>
 </div>
 
+<h1>💰 {{total}}</h1>
+
 <div id="tabla">
     <table class="table table-dark table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Activo</th>
+                <th scope="col">Inversion Total</th>
                 <th scope="col">Ticket</th>
                 <th scope="col">Precio de Entrada</th>
                 <th scope="col">CantInvertida</th>
@@ -20,26 +23,43 @@
         </thead>
         <tbody>
             <!-- Iterar sobre cada activo -->
-            <ng-container *ngFor="let activo of listaAgrupados">
+            <ng-container *ngFor="let activo of listaAgrupados; let i = index">
                 <tr>
-                    <th scope="row">🔔</th>
+                    <th scope="row">🪙</th>
                     <td>{{ activo.nombre.toUpperCase() }}</td>
+                    <td>
+                        <!-- Buscar el total por moneda correspondiente al activo actual -->
+                        <div *ngFor="let total of totalPorMoneda">
+                            <p *ngIf="total.nombre === activo.nombre">💰 {{ total.total }}</p>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><!-- Mostrar PROMEDIOS por activo -->
+                        <div *ngFor="let prom of promedioEntrada">
+                            <p *ngIf="prom.nombree === activo.nombre" id="promedio-text">
+                                {{ prom.totall | number:'1.5-5' }}
+                            </p>
+                        </div>
+                    </td>
                     <td colspan="4"></td>
                 </tr>
-                
+
                 <!-- Llamar al método getInversionesPorActivo para obtener las inversiones filtradas -->
-                <tr *ngFor="let inversion of getInversionesPorActivo(activo.nombre)">
-                    <th scope="row"></th>
-                    <td></td>
-                    <td>{{ inversion.nombre }}</td>
-                    <td>{{ inversion.precioEntrada }}</td>
-                    <td>{{ inversion.cantInvertida }}</td>
-                    <td>
-                        <a href="" type="button" (click)="deleteInversion(inversion.id)">✖</a>
-                    </td>
-                </tr>
+                <ng-container *ngFor="let inversion of getInversionesPorActivo(activo.nombre)">
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <!-- No incluir información del total por moneda aquí -->
+                        <td></td>
+                        <td>{{ inversion.nombre }}</td>
+                        <td>{{ inversion.precioEntrada }}</td>
+                        <td>{{ inversion.cantInvertida }}</td>
+                        <td>
+                            <a href="" type="button" (click)="deleteInversion(inversion.id)">✖</a>
+                        </td>
+                    </tr>
+                </ng-container>
             </ng-container>
         </tbody>
-        
     </table>
 </div>

@@ -32,4 +32,16 @@ export class SInversionService {
   public editInversion(id: number, tic: Inversion): Observable<any>{
     return this.httpClient.put<any>(this.URL + `/edit/${id}`, tic);
   }
+
+  public getTotalDeCartera(): Observable<number>{
+    return this.httpClient.get<number>(this.URL + `/total`);
+  }
+
+  public getTotalPorMoneda(nombreMoneda: string): Observable<number>{
+    return this.httpClient.get<number>(this.URL + `/totalmoneda/${nombreMoneda}`);
+  }
+
+  public getPromedioEntrada(nombre: string): Observable<any>{
+    return this.httpClient.get<any>(this.URL + `/promentrada/${nombre}`);
+  }
 }
