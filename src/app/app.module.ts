@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListadoInversionesComponent } from './components/listado-inversiones/listado-inversiones.component';
 import { NewInversionComponent } from './components/new-inversion/new-inversion.component';
 import { MNewInversionComponent } from './modal/m-new-inversion/m-new-inversion.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MNewInversionComponent } from './modal/m-new-inversion/m-new-inversion.
     HomeComponent,
     ListadoInversionesComponent,
     NewInversionComponent,
-    MNewInversionComponent
+    MNewInversionComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,

@@ -25,20 +25,20 @@
             <!-- Iterar sobre cada activo -->
             <ng-container *ngFor="let activo of listaAgrupados; let i = index">
                 <tr>
-                    <th scope="row">🪙</th>
-                    <td>{{ activo.nombre.toUpperCase() }}</td>
+                    <th scope="row"><h4>🪙</h4></th>
+                    <td><h4>{{ activo.nombre.toUpperCase() }}</h4></td>
                     <td>
                         <!-- Buscar el total por moneda correspondiente al activo actual -->
                         <div *ngFor="let total of totalPorMoneda">
-                            <p *ngIf="total.nombre === activo.nombre">💰 {{ total.total }}</p>
+                            <h4 *ngIf="total.nombre === activo.nombre">💰 {{ total.total }}</h4>
                         </div>
                     </td>
                     <td></td>
                     <td><!-- Mostrar PROMEDIOS por activo -->
                         <div *ngFor="let prom of promedioEntrada">
-                            <p *ngIf="prom.nombree === activo.nombre" id="promedio-text">
+                            <h4 *ngIf="prom.nombree === activo.nombre" id="promedio-text">
                                 {{ prom.totall | number:'1.5-5' }}
-                            </p>
+                            </h4>
                         </div>
                     </td>
                     <td colspan="4"></td>
@@ -51,9 +51,9 @@
                         <td></td>
                         <!-- No incluir información del total por moneda aquí -->
                         <td></td>
-                        <td>{{ inversion.nombre }}</td>
+                        <td></td>
                         <td>{{ inversion.precioEntrada }}</td>
-                        <td>{{ inversion.cantInvertida }}</td>
+                        <td>$ {{ inversion.cantInvertida }}</td>
                         <td>
                             <a href="" type="button" (click)="deleteInversion(inversion.id)">✖</a>
                         </td>
@@ -63,3 +63,5 @@
         </tbody>
     </table>
 </div>
+
+<br><br>
