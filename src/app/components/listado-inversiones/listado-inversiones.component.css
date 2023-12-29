@@ -1,3 +1,12 @@
 #promedio-text{
-    color: greenyellow;
+    color: rgb(13, 198, 7);
 }
+
+#inversionesTexts{
+    color: gray;
+}
+
+#inversionSola{
+    font-style: oblique;
+}
+
