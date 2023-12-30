@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class SInversionService {
 
-  //private URL = 'https://alertsn7-back.onrender.com/tickets';
-  private URL = 'http://localhost:8080/inversiones';
+  private URL = 'https://myinvest-back.fly.dev/inversiones';
+  //private URL = 'http://localhost:8080/inversiones';
 
   constructor(private httpClient: HttpClient) { }
 

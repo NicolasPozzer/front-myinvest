@@ -61,7 +61,8 @@ export class ListadoInversionesComponent implements OnInit {
     if (id != undefined) {
       this.sInversionService.deleteInversion(id).subscribe(
         data => {
-          this.getInversiones();
+        }, err => {
+          alert("Inversion Eliminada.");
           window.location.reload();
         }
         
